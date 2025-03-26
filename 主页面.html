@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1f1f1f, #0e0e0e);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glowing 1.5s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: #00ffcc;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            color: #1f1f1f;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: #00b3b3;
+            transform: scale(1.1);
+        }
+
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc; }
+            100% { text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Welcome to the web</h1>
+        <p>23数据-据象公益</p>
+        <!-- 点击按钮时进入advanced.html -->
+        <a href="页面1.html">
+            <button class="button">enter</button>
+        </a>
+    </div>
+
+</body>
+</html>
