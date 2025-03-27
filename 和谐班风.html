@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>和谐班风</title>
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: linear-gradient(135deg, #0e0e0e, #1f1f1f);
+        padding: 20px;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      main {
+        padding: 40px;
+        line-height: 1.8;
+        text-align: center;
+      }
+
+      h2,
+      h4 {
+        color: #00ffcc;
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      .back-button {
+        display: block;
+        margin-top: 30px;
+        padding: 12px 40px;
+        background: #00ffcc;
+        text-align: center;
+        color: #1f1f1f;
+        font-size: 1.2em;
+        border-radius: 5px;
+        text-decoration: none;
+        width: fit-content;
+        margin: 40px auto 0;
+      }
+
+      .back-button:hover {
+        background: #00b3b3;
+        transform: scale(1.1);
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      img {
+        width: 60%; /* 修改宽度为 60% */
+      }
+
+      .next,
+      .back {
+        margin-top: 30px;
+        padding: 15px 40px;
+        background: #00ffcc;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        color: #1f1f1f;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .next:hover,
+      .back:hover {
+        background: #00b3b3;
+        transform: scale(1.1);
+      }
+    </style>
+    <!-- 添加 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header>和谐班风</header>
+
+    <main>
+      <h4>和谐班风</h4>
+      <img src="班级照片/1.jpg" alt="awa" /><br />
+      <button class="back" id="back">上一张</button>&nbsp;&nbsp;&nbsp;
+      <button class="next" id="next">下一张</button>
+
+      <a href="目录.html" class="back-button">返回目录</a>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        var pics = [
+          "班级照片/1.jpg",
+          "班级照片/2.jpg",
+          "班级照片/3.jpg",
+          "班级照片/4.jpg",
+          "班级照片/5.jpg",
+          "班级照片/6.jpg",
+          "班级照片/7.jpg",
+          "班级照片/8.jpg",
+          "班级照片/9.jpg",
+          "班级照片/10.jpg",
+          "班级照片/11.jpg",
+          "班级照片/12.jpg",
+          "班级照片/13.jpg",
+          "班级照片/14.jpg",
+          "班级照片/15.jpg",
+          "班级照片/16.jpg",
+          "班级照片/17.jpg",
+          "班级照片/18.jpg",
+          "班级照片/19.jpg",
+          "班级照片/20.jpg",
+          "班级照片/21.jpg",
+          "班级照片/22.jpg",
+          "班级照片/23.jpg",
+          "班级照片/24.jpg",
+          "班级照片/25.jpg",
+          "班级照片/26.jpg",
+          "班级照片/27.jpg",
+          "班级照片/28.jpg",
+          "班级照片/29.jpg"
+        ];
+        var i = 0;
+        // 点击“下一张”按钮时切换图片
+        $("#next").click(function () {
+          i++;
+          $("img").attr("src", pics[i % 29]); // 修改为 % 29 以确保循环展示所有图片
+        });
+        // 点击“上一张”按钮时切换图片
+        $("#back").click(function () {
+          i += 28; // 通过加 28 实现倒退一张
+          $("img").attr("src", pics[i % 29]); // 修改为 % 29 以确保循环展示所有图片
+        });
+      });
+    </script>
+  </body>
+</html>

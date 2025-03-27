@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	    <title>公益视频</title>
+	    <style>
+	        body {
+	            background-color: #1e1e1e;
+	            color: #fff;
+	            font-family: 'Arial', sans-serif;
+	            margin: 0;
+	            padding: 0;
+	        }
+	
+	        header {
+	            background: linear-gradient(135deg, #0e0e0e, #1f1f1f);
+	            padding: 20px;
+	            text-align: center;
+	            font-size: 2em;
+	        }
+	
+	        main {
+	            padding: 40px;
+	            line-height: 1.8;
+	            text-align: center;
+	        }
+	
+	        h2,h4 {
+	            color: #00ffcc;
+	            font-size: 2em;
+	        }
+			
+	        p {
+	            font-size: 1.2em;
+	        }
+	
+	        .back-button {
+	            display: block;
+	            margin-top: 30px;
+	            padding: 12px 40px;
+	            background: #00ffcc;
+	            text-align: center;
+	            color: #1f1f1f;
+	            font-size: 1.2em;
+	            border-radius: 5px;
+	            text-decoration: none;
+	            width: fit-content;
+	            margin: 40px auto 0;
+	        }
+	
+	        .back-button:hover {
+	            background: #00b3b3;
+	            transform: scale(1.1);
+	        }
+			.video-container {
+			    position: relative;
+			    width: 100%;
+			    max-width: 640px;
+			    margin: 0 auto;
+			}
+			
+			video {
+			    width: 100%;
+			    height: auto;
+			}
+			img {
+				width: 100%;
+			}
+			.like-button {
+        font-size: 50px;
+        cursor: pointer;
+        color: #ff4081;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .liked {
+        animation: like-animation 0.5s ease;
+        color: #f50057;
+      }
+
+      @keyframes like-animation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+	    </style>
+	</head>
+	<body>
+	
+	    <header> 公益视频</header>
+	
+	    <main>
+	    	
+			<h4>第一期 公益视频-校园霸凌</h4>
+			<div class="video-container">
+			    <video muted loop controls poster="img/c70558b0d74cfb725590b2c0039ca4e.png">
+			        <source src="video/f2617065f8cbd88dd1222976f4e10e73.mp4" type="video/mp4">   	
+			    </video>
+			    <p>抵制校园霸凌，从你我做起</p>
+			    <p>制作人员：范彭媛	沈舒怡	周子玥	徐颖娇	陈艾妮	李羿辰</p>
+			    <div class="like-button" id="likeButton">
+	        	👍
+    		</div>
+			</div>
+			<h4>第二期 公益视频-节约用水</h4>
+			<div class="video-container">
+			    <video muted loop controls poster="img/6c8654e78c214beb410c5deb5d95c62.png">	
+			        <source src="video/4db570e950a6b76eeb246bdeb30ed75e.mp4" type="video/mp4">    	
+			    </video>
+			    <p>水是宝贵的资源，节约用水不仅有助于减轻水资源压力，还能保护生态环境，促进社会可持续发展</p>
+			    <p>制作人员：朱诗敏	李沁筱	徐筱薇	徐天怡	唐雨萱	林彤</p>
+			    <div class="like-button" id="likeButton1">
+	        	👍
+    		</div>
+			</div>
+			<h4>第三期 公益视频-禁毒</h4>
+			<div class="video-container">
+			    <a href="https://www.bilibili.com/video/BV15piTeZEA6/?spm_id_from=333.1387.upload.video_card.click&vd_source=045a7006262b4225b2f78db4e34d143f" target="_blank">
+				    <img src="img/48789ac48bb3a2dc492e84a19264c83.png" alt="Image" class="shadow-img"></a>
+				    <p>提高公众对毒品危害的认识，宣传远离毒品的健康生活方式</p>
+			    <p>制作人员：王泽睿	孔炜盛	李尧 陈奕阳	王喆闵	丁一宝</p>
+			    <div class="like-button" id="likeButton2">
+	        	👍
+    		</div>
+			</div>
+			<h4>第四期 公益视频-校园霸凌</h4>
+	        <div class="video-container">
+			    <video muted loop controls poster="img/53133f08086dd18605da6ac45367bb2.png">
+			        <source src="video/35fc006f1400b7dd220cc146032247db.mp4" type="video/mp4">  	
+			    </video>
+			    
+			    <p>校园霸凌是一个严重影响学生成长的问题，需要社会各界共同关注，共同创建一个健康、和谐的校园环境。</p>
+			    <p>制作人员：高颢辰	胡哲灏	何凯航	高亦辰	蒋天豪	董睿翔</p>
+			    <div class="like-button" id="likeButton3">
+	        	👍
+    		</div>
+			</div>
+			
+	        <a href="目录.html" class="back-button">返回目录</a>
+	        
+
+    <script>
+      const likeButtons = document.querySelectorAll(".like-button");
+
+likeButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // 添加动画效果
+    button.classList.add("liked");
+    setTimeout(() => {
+      button.classList.remove("liked");
+    }, 500);
+  });
+});
+
+    </script>
+	    </main>
+	</body>
+</html>
